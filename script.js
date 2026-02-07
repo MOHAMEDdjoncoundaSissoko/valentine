@@ -5,8 +5,7 @@ const page2 = document.getElementById("page2");
 
 let scale = 1;
 
-// Bouton NON qui fuit + fait grandir OUI
-noBtn.addEventListener("mouseover", () => {
+function moveNoButton() {
   const maxX = window.innerWidth - noBtn.offsetWidth;
   const maxY = window.innerHeight - noBtn.offsetHeight;
 
@@ -17,10 +16,19 @@ noBtn.addEventListener("mouseover", () => {
   noBtn.style.top = randomY + "px";
 
   // YES grandit progressivement
-  scale += 0.15;
-  if (scale <= 3) {
+  scale += 0.30;
+  if (scale <= 5) {
     yesBtn.style.transform = `scale(${scale})`;
   }
+}
+
+// Souris (PC)
+noBtn.addEventListener("mouseover", moveNoButton);
+
+// Tactile (mobile)
+noBtn.addEventListener("touchstart", (e) => {
+  e.preventDefault();
+  moveNoButton();
 });
 
 // Clic sur OUI → page finale
