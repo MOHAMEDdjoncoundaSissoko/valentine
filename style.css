@@ -12,12 +12,13 @@ body {
 /* PAGE 1 */
 .container {
   text-align: center;
+  padding: 20px;
 }
 
 h1 {
   color: white;
   font-size: 3em;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
@@ -34,15 +35,15 @@ button {
 #yes {
   background-color: #ff4d6d;
   color: white;
-  left: 45%;
-  top: 55%;
+  left: 40%;
+  top: 60%;
 }
 
 #no {
   background-color: #555;
   color: white;
   left: 55%;
-  top: 55%;
+  top: 60%;
 }
 
 /* PAGE 2 */
@@ -54,6 +55,7 @@ button {
   text-align: center;
   color: white;
   animation: fadeIn 1.5s ease-in;
+  padding: 20px;
 }
 
 .heart {
@@ -61,6 +63,7 @@ button {
   animation: beat 1s infinite;
 }
 
+/* Animations */
 @keyframes beat {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.25); }
@@ -69,4 +72,32 @@ button {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* 📱 RESPONSIVE TÉLÉPHONE */
+@media (max-width: 600px) {
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  button {
+    font-size: 1.2em;
+    padding: 14px 26px;
+  }
+
+  #yes {
+    left: 20%;
+    top: 65%;
+  }
+
+  #no {
+    left: 55%;
+    top: 65%;
+  }
+
+  .heart {
+    font-size: 4.5em;
+  }
 }
